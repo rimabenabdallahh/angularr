@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
+.container{
+    height: 180vh;
+}
+p{
+  margin-bottom: 20px;
+  font-family:"Comfortaa";
+}
+.k-form {
+    margin-bottom: 20px;
+    font-family:"Comfortaa";
+    
+    left: 20%;
+  }
+  
+  .col-12 {
+    margin-bottom: 20px;
+    font-family:"Comfortaa";
+    
+  }
+  
+  .k-textbox {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family:"Comfortaa";
+  }
+  
+  .row {
+    margin-bottom: 10px;
+    font-family:"Comfortaa";
+  }
+  
+
+  
+  .row .col-8 {
+    display: flex;
+    font-family:"Comfortaa";
+  }
+  
+  .kendo-label {
+    margin-right: 10px;
+    font-family:"Comfortaa";
+  }
+  
+  input[type="radio"] {
+    margin-right: 5px;
+    font-family:"Comfortaa";
+  }
+button{
+    position: absolute;
+    left: 90vh;
+    margin-bottom: 10px;
+}

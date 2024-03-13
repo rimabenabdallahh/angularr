@@ -1,0 +1,55 @@
+<div class="container">
+    <form class="k-form" [formGroup]="emailForm">
+        <kendo-formfield  >
+            <kendo-label [for]="sujet" text="Sujet"></kendo-label>
+            <kendo-textbox formControlName="sujet" [clearButton]="true" #sujet></kendo-textbox>
+
+            <kendo-formerror>Erreur: Sujet est obligatoire</kendo-formerror>
+        </kendo-formfield>
+
+        <kendo-formfield>
+            <div class="row ">
+                <kendo-label  text="Formateur"></kendo-label>
+                <input  type="radio"  name="option" value="formateur" (change)="callList($event)"   formControlName="option" kendoRadioButton/>
+                <kendo-label  text="Client"></kendo-label>
+                <input  type="radio"   name="option"  value="client"(change)="callList($event)" formControlName="option"  kendoRadioButton/>
+                <kendo-label  text="Participant"> </kendo-label>
+                <input  type="radio"   name="option"  value="participant" (change)="callList($event)"  formControlName="option"  kendoRadioButton />
+                <kendo-label  text="Autre"> </kendo-label>
+                <input  type="radio"   name="option"  value="autre" (change)="callList($event)"  formControlName="option"  kendoRadioButton />
+
+            </div>
+          
+        </kendo-formfield>
+
+
+        <kendo-formfield  *ngIf="emailForm.controls['option'].value!='autre'">
+            <kendo-label [for]="lista" text="liste des emails (To)"></kendo-label>
+            <kendo-dropdownlist
+            [data]="emailList"
+            formControlName="to" #lista>
+          </kendo-dropdownlist>          
+        </kendo-formfield>
+        <kendo-formfield *ngIf="emailForm.controls['option'].value=='autre'"  >
+            <kendo-label [for]="to" text="Email (To)"></kendo-label>
+            <kendo-textbox formControlName="to" placeholder="taper un email" [clearButton]="true" #to></kendo-textbox>
+
+            <kendo-formerror>Erreur: Sujet est obligatoire</kendo-formerror>
+        </kendo-formfield>
+        <kendo-formfield>
+            <kendo-label [for]="message" text="Message"></kendo-label>
+            <kendo-editor formControlName="message"  style="height: 200px;" #message></kendo-editor>
+          
+        </kendo-formfield>
+
+
+
+
+        <div class="k-form-buttons mt-3">
+            <button kendoButton themeColor="primary" (click)="save()" [disabled]="emailForm.invalid">
+                Save
+            </button>
+            <button kendoButton (click)="cancel()">Cancel</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,58 @@
+kendo-appbar{
+  height: 3.5rem;
+  background-color: #ffffff;
+}
+.title {
+    font-size: 18px;
+    margin: 0;
+  }
+  kendo-badge-container {
+    margin-right: 8px;
+  }
+  img{
+    height: auto;
+    width: 90px;
+    margin-left: 10px;
+  }
+  ul {
+    font-size: 14px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  li {
+    margin: 0 9px;
+  }
+  li:hover {
+    color: #ffc000;
+    cursor: pointer;
+  }
+  .k-appbar-section {
+    display: flex;
+  }
+  .content li {
+    margin: 0;
+    padding: 6px 5px;
+  }
+  .content ul {
+    display: block;
+  }
+  .content {
+    padding: 4px;
+  }
+  @media only screen and (max-width: 600px) {
+    .search-section {
+      display: none;
+    }
+    .appbar-items,
+    .user-actions kendo-badge-container,
+    kendo-avatar.k-avatar,
+    .k-appbar-separator {
+      display: none;
+    }
+
+    .overflow-button,
+    .search {
+      display: block;
+    }}

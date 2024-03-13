@@ -1,0 +1,120 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gantari:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Varela&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300&display=swap');
+
+ .top{
+  position: fixed;
+    padding: 40px;
+    width: 100%;
+    padding-top: 100px;
+      left: -2.5vh;
+  }
+  .right{
+    position: absolute;
+      padding: 40px;
+      width: 100%;
+      padding-top: 100px;
+        left: -2.5vh;
+        
+    }
+    .left{
+      position: absolute;
+        padding: 40px;
+        width: 100%;
+        padding-top: 100px;
+          left: -2.5vh;
+          
+      }
+  .header1{
+    
+    position: fixed;
+    font-family: 'Jost';
+    top:14vh;
+    left:12vw;
+    
+  }
+  .p1{
+    position: fixed;
+    font-family:'Kumbh Sans';
+    top: 22vh;
+    left: 15vw;
+    
+  }
+  .image{
+    position: fixed;
+    background-image: url(homepage.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    
+    height:25%;
+    width: 25%!important;
+        
+    left: 65vw;
+    top:10.5vh;
+  }
+  
+  
+  
+
+  
+
+.box {
+  position: absolute;
+  top: 4vh;
+  left: 10vw;
+  width: 87%;
+  height: 20vh;
+  background: #c2d2ff;
+  border-radius: 25px;
+  z-index: -1;
+  
+}
+iframe{
+  position: fixed;
+
+  left: 53vw;
+   top:35%!important;
+   border-radius: 25px;
+   background-image: #c2d2ff;
+}
+.header2{
+  position: fixed;
+  font-family: 'Jost';
+ /* left:3vw;*/
+ margin-left: 10vw;
+ right:60vw;   
+ top:43vh
+  
+}
+.p2{
+  position: fixed;
+  margin-left: 10vw;
+  right:60vw;
+  top:68vh;
+  font-family: 'Gantari';
+}
+.p3{
+  position: fixed;
+  margin-left: 10vw;
+  right:60vw;
+  top:76vh;
+  font-family: 'Gantari';
+
+}
+.userName{
+  position: fixed;
+  font-family: 'Playfair';
+  font-weight: 100;
+  top:14.3vh;
+  left:24vw;
+
+}

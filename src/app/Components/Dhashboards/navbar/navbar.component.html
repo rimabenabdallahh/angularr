@@ -1,0 +1,39 @@
+<kendo-appbar position="top">
+     
+
+  <kendo-appbar-spacer></kendo-appbar-spacer>
+
+  <kendo-appbar-section class="user-actions">
+    <span class="k-appbar-separator"></span>
+  </kendo-appbar-section>
+
+  <kendo-appbar-section>
+    <button
+      kendoButton
+      fillMode="flat"
+      class="overflow-button"
+      #anchor
+      (click)="onToggle()"
+    >
+      <kendo-icon name="menu"></kendo-icon>
+    </button>
+    <kendo-popup [anchor]="anchor.element" *ngIf="show" [margin]="margin">
+      <div class="content">
+        <ul>
+          <li (click)="navigateToProfile()"><span>Mon profil</span></li>
+          <li (click)="logout()"><span>Déconnexion</span></li>
+
+        </ul>
+      </div>
+    </kendo-popup>
+    <kendo-avatar             [border]="true"
+    shape="circle"
+    fillMode="outline" 
+    [initials]="avatar"
+    width="35px"
+    height="35px"
+    size="large"
+    style="background-color:#86a4ff; color: #fff;"
+    ></kendo-avatar>
+  </kendo-appbar-section>
+</kendo-appbar>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+        <div class="container">
+            
+            <div class="row">
+    
+                <div class="offset-md-2 col-lg-5 col-md-7 offset-lg-4 offset-md-3">
+                 
+                    <div class="panel border bg-white">
+    
+
+                      <div class="panel-body">
+                         <form  [formGroup]="form">
+                            <img src="./stir.png">
+                                   <div class="input-field" [class.error]="form.controls['username'].dirty && form.hasError('required','username')">
+                                        <span class="user"></span>
+                                        <label  for="username" class="label-user">Email</label>
+                                        <input formControlName="username" type="text" placeholder="Email">
+                                    
+                               </div>
+                               <small *ngIf="form.controls['username'].dirty && form.hasError('required','username')" class="text-danger">*Email is required</small>
+                               
+                                <div class="input-field" [class.error]="form.controls['password'].dirty && form.hasError('required','password')">
+                                     <span class="lock "></span>
+                                     <label for="password" class="label-pass">Mot de passe</label>
+                                     <input [type]="fieldTextType ? 'text' : 'password'" formControlName="password" type="password" placeholder="Mot de passe">
+                                     <a
+                                     (click)="toggleFieldTextType()"
+                                   >
+                                   <img class="eye" src="./showEye.png">
+                                </a>
+                            </div>
+                            <small *ngIf="form.controls['password'].dirty && form.hasError('required','password')" class="text-danger">*Password is required</small>
+                  
+                            <button (click)="onSubmit()" type="submit" class="btn" >SE CONNECTER</button>
+                       
+                         </form>
+                      </div>
+                     
+                    </div>
+                </div>
+            </div>
+        </div>
+   
+    
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="example-wrapper">
+    <div class="wrapper">
+      <h4>Mon profil</h4>
+      <div class="avatar">
+        <kendo-avatar
+          [border]="true"
+          shape="circle"
+          fillMode="outline" 
+          [initials]="avatar"
+          width="128px"
+          height="128px"
+          size="large"
+          style="background-color:#86a4ff; color: #fff;"
+        ></kendo-avatar>
+        <span class="email">{{user?.email}}</span>
+      </div>
+    </div>
+  <table  style="width: 100%;">
+    <tr >
+      <td  style="width: 50%;"> <button  class="bt" (click) ="open()"  style="border-bottom-left-radius: 30px;" >
+        <kendo-svg-icon [icon]="icons.edite" style="color:#303131;"></kendo-svg-icon> Modifier mes informations </button> 
+  </td>
+    </tr>
+  </table>
+  
+  </div>
+  </div>
+  
+  
+    

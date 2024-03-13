@@ -1,0 +1,9 @@
+.video {
+    
+    transform: translate(20%);
+    position: absolute;
+    top: 10vh;
+
+    min-width: 100%;
+    min-height: 100%;
+  }

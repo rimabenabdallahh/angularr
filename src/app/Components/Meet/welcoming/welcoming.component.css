@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Jost&display=swap');
+.container{
+    position: absolute;
+    padding-top: 10vh;
+    top:33vh
+}
+p{
+    font-family: 'Comfortaa';
+    margin-left:1vw;
+    font-size: smaller;
+}
+input{
+    
+    width: 50vh;
+		background: #fff;
+		color: black;
+		font: inherit;
+		box-shadow: 0 6px 10px 0 rgba(0, 0, 0 , .1);
+		border: 0;
+		outline: 0;
+		padding: 18px 18px;
+        font-family:'Inconsolata';
+        
+}
+.btn1{
+    position: absolute;
+    width: auto;
+    top: 0vh;
+    left:53vh;
+    padding: 18px 18px;
+    font-family: 'Comfortaa';
+    background-color: #FD8291;
+    color: #fff;
+}
+.btn2{
+    position: absolute;
+    width: auto;
+    top: 0vh;
+    left:68vh;
+    padding: 18px 18px;
+    font-family: 'Comfortaa';
+    background-color: #86a4ff;
+    }
+    .btn1:hover{
+        background: #86a4ff  ; 
+        color: black; 
+
+    }
+    .btn2:hover{
+        background: #c2d2ff  ;  
+
+    }
+    
+ 
+
+kendo-label{
+    font-family: 'Nunito';
+    
+    
+    
+}
+img{
+    background-image: url(meeting.png);
+    position: absolute;
+    width: 45%;
+    height: auto;
+    top:13vh;
+    left:50vw;
+}
+h1{
+   position: absolute;
+    margin-left: 2vw;
+    right: 50vw;   
+    top:20vh;
+    font-family: 'Jost';
+}

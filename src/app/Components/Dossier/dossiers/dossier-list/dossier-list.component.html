@@ -1,0 +1,32 @@
+<div class="row  m-3">
+  <div class="col-3 mt-3">
+    <button kendoButton [primary]="true" *ngIf="user?.role=='admin'" (click)="openFormationDetails(null)"> + Ajouter</button>
+  </div>
+   
+</div>
+<kendo-grid [kendoGridBinding]="gridData" [filterable]="true" [resizable]="true" >
+    <kendo-grid-column field="code" title="Code"> </kendo-grid-column>
+    <kendo-grid-column field="theme" title="Théme"> </kendo-grid-column>
+    <kendo-grid-column field="debut" title="Date de debut">
+      <ng-template kendoGridCellTemplate let-dataItem>
+        {{ dataItem.debut |  date: 'dd/MM/yyyy' }}
+      </ng-template> </kendo-grid-column>
+    <kendo-grid-column field="fin" title="Date de fin"  > 
+      <ng-template kendoGridCellTemplate let-dataItem>
+        {{ dataItem.fin |  date: 'dd/MM/yyyy' }}
+      </ng-template>
+    </kendo-grid-column >
+    <kendo-grid-column field="duree" title="Durée (jours)"> </kendo-grid-column>
+    <kendo-grid-column  *ngIf="user?.role!='formateur'" field="cout" title="Cout (D.THT)"> </kendo-grid-column>
+    <kendo-grid-column *ngIf="user?.role!='formateur'" field="nmbr" title="Nombre de présence"> </kendo-grid-column>
+    <kendo-grid-column *ngIf="user?.role!='formateur'" field="formateur" title="Formateur"> 
+      <ng-template kendoGridCellTemplate let-dataItem>
+        {{ dataItem.formateur.name }}
+      </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column *ngIf="user?.role=='admin'" title="Action">
+      <ng-template kendoGridCellTemplate let-dataItem>
+        <span class="k-icon k-i-edit mr-2"  (click)="openFormationDetails(dataItem)"></span>
+        <span class="k-icon k-i-delete" (click)="deleteFormation(dataItem.id)"></span>
+      </ng-template>
+  </kendo-grid-column>

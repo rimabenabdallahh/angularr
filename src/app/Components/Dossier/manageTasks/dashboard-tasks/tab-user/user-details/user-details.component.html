@@ -1,0 +1,66 @@
+<div class="container">
+    <form class="k-form" [formGroup]="userForm">
+        <kendo-formfield *ngIf="role !== 'admin'" >
+            <kendo-label  [for]="nom" text="Nom"></kendo-label>
+            <kendo-textbox formControlName="nom" [clearButton]="true" #nom></kendo-textbox>
+            <kendo-formerror>Erreur: Nom invalide</kendo-formerror>
+        </kendo-formfield>
+        <kendo-formfield *ngIf="role!='client' && role != 'admin'"> 
+            <kendo-label [for]="prenom" text="Prénom"></kendo-label>
+            <kendo-textbox formControlName="prenom" [clearButton]="true" #prenom></kendo-textbox>
+            <kendo-formerror>Erreur: Prénom invalide</kendo-formerror>
+        </kendo-formfield>
+        <kendo-formfield *ngIf="role !== 'admin'">
+            <kendo-label  [for]="adresse" text="Adresse"></kendo-label>
+            <kendo-textbox formControlName="adresse" [clearButton]="true" #adresse></kendo-textbox>
+            <kendo-formerror>Erreur: Adresse invalide</kendo-formerror>
+          
+        </kendo-formfield>
+        <kendo-formfield>
+            <kendo-label [for]="email" text="Email"></kendo-label>
+            <kendo-textbox formControlName="email" [clearButton]="true" #email></kendo-textbox>
+            <kendo-formerror>Erreur: Email invalide</kendo-formerror>
+          
+        </kendo-formfield>
+        <kendo-formfield *ngIf="role !== 'admin'">
+            <kendo-label  [for]="telephone" text="Téléphone"></kendo-label>
+            <kendo-textbox formControlName="telephone" [clearButton]="true" #telephone></kendo-textbox>
+            <kendo-formerror>Erreur: Téléphone invalide</kendo-formerror>
+        </kendo-formfield>
+        <kendo-formfield>
+            <kendo-label [for]="password" text="Mot de passe"></kendo-label>
+            <kendo-textbox formControlName="motDePasse" [clearButton]="true" #password>
+                <ng-template kendoTextBoxSuffixTemplate>
+                    <button
+                      kendoButton
+                      look="clear"
+                      icon="eye"
+                      (click)="toggleVisibility()"
+                    ></button>
+                  </ng-template>
+            </kendo-textbox>
+            <kendo-formerror>Erreur: Entrez une combinaison d'au moins 8 chiffres,lettres</kendo-formerror>
+          
+        </kendo-formfield>
+
+        <kendo-formfield *ngIf="role=='participant'">
+            <kendo-label [for]="client" text="Client"></kendo-label>
+            <kendo-dropdownlist
+            [data]="clientList"
+            textField="name"
+            valueField="id"
+            formControlName="client"
+            #client
+   >
+          </kendo-dropdownlist>          
+        </kendo-formfield>
+
+
+        <div class="k-form-buttons mt-3">
+            <button kendoButton themeColor="primary" (click)="save()" [disabled]="userForm.invalid">
+                Sauvegarder
+            </button>
+            <button kendoButton (click)="cancel()">Annuler</button>
+        </div>
+    </form>
+</div>

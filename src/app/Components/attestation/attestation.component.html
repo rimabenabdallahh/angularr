@@ -1,0 +1,44 @@
+<div  class="row  m-3">
+    <div  class="col-3 mt-3" *ngIf="user?.role=='admin'">
+      <button kendoButton  [primary]="true" (click)="openCourDetails(null)"> + Ajouter</button>
+    </div>
+    <div  class="row  m-3">
+      <div  class="col-3 mt-3">
+      <b>Attestations</b>
+      </div>    
+     
+  </div>
+<kendo-grid [data]="gridData">
+   
+      <kendo-grid-column field="documentName" title="Nom de document"> </kendo-grid-column>
+      <kendo-grid-column field="documentType" title="Type de document"> </kendo-grid-column>
+      
+      <kendo-grid-column field="Particpants" title="Email"> 
+        <ng-template kendoGridCellTemplate let-dataItem>
+          {{ dataItem.participant.name }}
+        </ng-template>
+      </kendo-grid-column>
+      <kendo-grid-column  field="creationDate"  title="Created Date"  >
+        <ng-template   kendoGridCellTemplate let-dataItem>
+            {{ dataItem.creationDate | date: 'dd/MM/yyyy' }}
+        </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column title="Action">
+      <ng-template kendoGridCellTemplate let-dataItem>
+        <span kendoTooltip title="Download file">
+          <button kendoButton (click)="saveByteArray(dataItem)" [fillMode]="fillMode">
+                 <span class="k-icon k-i-upload"></span></button>
+        </span>
+        <span  *ngIf="user?.role=='admin'" kendoTooltip title="Edit" >         
+          <button kendoButton  (click)="openCourDetails(dataItem)" [fillMode]="fillMode">  <span
+                    class="k-icon k-i-edit" ></span></button>
+        </span>
+        <span *ngIf="user?.role=='admin'" kendoTooltip title="Delete file">         
+          <button kendoButton (click)="delete(dataItem.id)"[fillMode]="fillMode" class="delete" >  <span
+                    class="k-icon k-i-delete"></span></button>
+        </span>
+      </ng-template>
+  </kendo-grid-column>
+   
+ 
+  

@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap');
+
+.box1 {
+    position: absolute;
+    top: 30vh;
+    left: 2.5vw;
+    width: 50vh;
+    height: 15vw;
+    background: #c2d2ff;
+    border-radius: 25px;
+    z-index: -1;
+    
+    
+  }
+  .box2 {
+    position: absolute;
+    top: 30vh;
+    left: 35.5vw;
+    width: 50vh;
+    height: 15vw;
+    background: #c2d2ff;
+    border-radius: 25px;
+    z-index: -1;
+    
+  }
+  .box3 {
+    position: absolute;
+    top: 30vh;
+    left: 68vw;
+    width: 50vh;
+    height: 15vw;
+    background: #c2d2ff;
+    border-radius: 25px;
+    z-index: -1;
+    
+  }
+  .k-icon{
+    font-size: 100px;
+    color: #07078E;
+    position: relative;
+    left: 30%;
+    top:-10vh;
+    padding: 10vh;
+    background-color: #86a4ff;
+    border-radius: 50%;
+ 
+  }
+  .header1{
+    position: relative;
+    left:29%;
+    top:-10vh;
+    font-family: 'Nunito'
+  }
+  .header2{
+    position: relative;
+    left:33%;
+    top:-10vh;
+    font-family: 'Nunito'
+  }
+  .header3{
+    position: relative;
+    left:26%;
+    top:-10vh;
+    font-family: 'Nunito'
+  }
+  .location p{
+    position: relative;
+    text-align: center;
+    margin-bottom: -5px;
+    top:-12vh;
+    font-family: 'Nunito'
+
+  }
+  .email{
+    position: relative;
+    text-align: center;
+    margin-bottom: -5px;
+    top: -7vh;
+    font-family: 'Nunito'
+
+    
+  }
+  .facebook{
+    width: fit-content;
+    height: fit-content;
+  }
+  .facebook p{
+    position: relative;
+    text-align: center;
+    top: -7vh;
+    font-family: 'Nunito'  
+  }
+

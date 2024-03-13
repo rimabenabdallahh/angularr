@@ -1,0 +1,5 @@
+<app-side-nav (onToggleSideNav)="onToggleSideNav($event)"></app-side-nav>
+<app-navbar [ngStyle]="{  width : isSideNavCollapsed ==false ? ' calc(100% - 5rem)' :'  calc(100% - 16.5625rem)',left: isSideNavCollapsed ==false ? ' 5rem' :' 16.5625rem' }"></app-navbar>
+  <div class="body" [ngClass]="getBodyClass()" >
+    <router-outlet></router-outlet>
+</div>

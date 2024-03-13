@@ -1,0 +1,20 @@
+<div class="row  m-3">
+    <div class="col-3">
+      <button kendoButton [primary]="true" (click)="open()"> Envoyer un email</button>
+    </div>
+     
+  </div>
+<p class="title mt-3">List of Emails : </p>
+<kendo-grid [kendoGridBinding]="gridData" filterable="menu" [height]="550">
+  <kendo-grid-column field="sujet" title="Sujet" [width]="220">
+
+  </kendo-grid-column>
+  <kendo-grid-column field="to" title="A" [width]="220">
+  </kendo-grid-column>
+
+  <kendo-grid-column field="creationDate" title="createdDate" [width]="220">
+    <ng-template kendoGridCellTemplate let-dataItem>
+      {{ dataItem.creationDate | date: 'dd/MM/yyyy' }}
+    </ng-template>
+  </kendo-grid-column>
+</kendo-grid>

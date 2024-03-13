@@ -1,0 +1,30 @@
+<div class="row  m-3">
+  <div class="col-3">
+    <button kendoButton [primary]="true" (click)="openUserDetails(null)"> + Ajouter</button>
+  </div>
+   
+</div>
+<kendo-grid [data]="gridData">
+    <kendo-grid-column *ngIf="userRole !== 'client' && userRole !== 'admin'"field="prenom" title="Prenom"  > </kendo-grid-column>
+    <kendo-grid-column *ngIf="userRole !== 'admin'" field="nom" title="Nom"> </kendo-grid-column>
+    <kendo-grid-column *ngIf="userRole !== 'admin'" field="adresse" title="Adresse"> </kendo-grid-column>
+    <kendo-grid-column field="email" title="Email"> </kendo-grid-column>
+    <kendo-grid-column *ngIf="userRole !== 'admin'" field="telephone" title="Telephone"> </kendo-grid-column>
+    <kendo-grid-column *ngIf="userRole=='participant'" field="client" title="Client">
+    
+      <ng-template kendoGridCellTemplate let-dataItem>
+        {{ dataItem.client?.name}}
+      </ng-template>
+       </kendo-grid-column>
+       <kendo-grid-column *ngIf="userRole=='client'" field="nbr" title="présence des participants"></kendo-grid-column>
+    <kendo-grid-column field="motDePasse" title="Mot de passe"> </kendo-grid-column>
+    <kendo-grid-column field="action" title="Action">
+      <ng-template kendoGridCellTemplate let-dataItem>
+        <span class="k-icon k-i-edit mr-2"   (click)="openUserDetails(dataItem)"></span>
+        <span class="k-icon k-i-delete" (click)="deleteUser(dataItem.id)"></span>
+      </ng-template>
+  </kendo-grid-column>
+  
+
+
+  </kendo-grid>

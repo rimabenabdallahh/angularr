@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <kendo-tabstrip (tabSelect)="onTabSelect($event)">
+    <kendo-tabstrip-tab title="Clients" [selected]="true">
+      <ng-template kendoTabContent>
+        <app-user-tab [userRole]="'client'"></app-user-tab>
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab title="Formateurs">
+      <ng-template kendoTabContent>
+        <app-user-tab [userRole]="'formateur'"></app-user-tab>
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab title="Participants">
+      <ng-template kendoTabContent>
+        <app-user-tab [userRole]="'participant'"></app-user-tab>
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab title="Administrateurs">
+      <ng-template kendoTabContent>
+        <app-user-tab [userRole]="'admin'"></app-user-tab>
+      </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab title="Email">
+      <ng-template kendoTabContent>
+        <app-email></app-email>
+      </ng-template>
+    </kendo-tabstrip-tab>
+   
+  </kendo-tabstrip>
+</div>

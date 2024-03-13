@@ -1,0 +1,13 @@
+@import "~@progress/kendo-theme-default/dist/all.css";
+
+.a {
+    color:#c5c1c1
+}
+div{
+    width: 100%;
+    padding: 3px;
+}
+
+  .bt{background-color: #3899DD;color: #fff;}
+  .cancel{background-color: #c5c9cd;color:  #303131; border:solid 1px #303131;}
+  .bt2{background-color: #ffffff;color:  #3899DD; border:solid 1px  #3899DD; margin: 20px; padding-left:10px ;padding-right:10px ; }

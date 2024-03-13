@@ -1,0 +1,36 @@
+<div class="container">
+    <form class="k-form" [formGroup]="factForm">
+        <kendo-formfield>
+            <kendo-label  class="mb-3" [for]="form" text="Client"></kendo-label>
+            <kendo-dropdownlist
+            [data]="clientList"
+            textField="name"
+            valueField="id"
+            formControlName="client"
+            #form
+   >
+          </kendo-dropdownlist>   
+          <kendo-formerror>Erreur: Client invalide</kendo-formerror>
+        </kendo-formfield>
+
+        <div class="row mt-2" *ngIf="!facture">
+            <div class="col-8">
+                <kendo-label  class="mb-3" [for]="facture" text="Facture" ></kendo-label>
+              <label class="btn btn-default p-0">
+                <input type="file" (change)="selectFile($event)"  accept=".pdf"  />
+              </label>
+            </div>
+          </div>
+
+        <div class="k-form-buttons mt-3">
+
+            <button kendoButton themeColor="primary" (click)="save()" [disabled]="factForm.invalid">
+              Sauvegarder
+          </button>
+            <button kendoButton (click)="cancel()">Cancel</button>
+        </div>
+    </form>
+</div>
+
+
+

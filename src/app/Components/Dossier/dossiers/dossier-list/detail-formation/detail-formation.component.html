@@ -1,0 +1,117 @@
+<div class="container">
+    <form class="k-form" [formGroup]="formationForm">
+        <div class="row">
+            <div class="col-3">
+                <kendo-formfield>
+                    <kendo-label [for]="code" text="Code"></kendo-label>
+                    <kendo-textbox formControlName="code" [clearButton]="true" #code></kendo-textbox>
+        
+                    <kendo-formerror>Erreur: Code invalide</kendo-formerror>
+                </kendo-formfield>
+            </div>
+            <div class="col-9">
+                <kendo-formfield>
+                    <kendo-label class="mt-1"[for]="theme" text="Theme"></kendo-label>
+                    <kendo-textbox formControlName="theme" [clearButton]="true" #theme></kendo-textbox>
+                    <kendo-formerror>Erreur: Theme invalide</kendo-formerror>
+                </kendo-formfield>
+            </div>
+        </div>
+        
+
+        
+<div class="row">
+    <kendo-label [for]="debut" text="Date de debut"></kendo-label>
+    <div class="col-10">
+        <kendo-formfield>
+          
+            <kendo-datetimepicker
+            formControlName="debut"
+            [format]="format"
+            [min]="min"
+            [max]="max"
+            calendarType="classic"
+            #debut
+          ></kendo-datetimepicker>
+            <kendo-formerror>Erreur: Date de debut invalide</kendo-formerror>
+          
+        </kendo-formfield>
+    </div>
+   
+</div>
+
+<div class="row">
+    <kendo-label [for]="fin" text="Date de fin"></kendo-label>
+    <div class="col-10">
+        <kendo-formfield>          
+            <kendo-datetimepicker
+                formControlName="fin"
+                [min]="min"
+                [max]="max"
+                [format]="format"
+                calendarType="classic"
+                #fin
+              ></kendo-datetimepicker>
+                <kendo-formerror>Erreur: Date de fin invalide</kendo-formerror>
+            </kendo-formfield>
+    </div>
+</div>
+<div class="row">
+    <div class="col-10">
+        <kendo-formfield>
+            <kendo-label [for]="duree" text="Durée (jours)"></kendo-label>
+            <kendo-textbox formControlName="duree" [clearButton]="true" #duree></kendo-textbox>
+            <kendo-formerror>Erreur: Durée invalide</kendo-formerror>
+          
+        </kendo-formfield>
+    </div>
+</div>
+        
+<div class="row">
+    <div class="col-10">  
+        <kendo-formfield>
+            <kendo-label  class="mt-1" [for]="cout" text="Coût (D.THT)"></kendo-label>
+            <kendo-textbox formControlName="cout" [clearButton]="true" #cout></kendo-textbox>
+            <kendo-formerror>Erreur: Coût invalide</kendo-formerror>
+          
+        </kendo-formfield>
+    </div>
+</div> 
+
+<div class="row">
+    <div class="col-10">     
+        <kendo-formfield>
+            <kendo-label  class="mb-3" [for]="form" text="Formateur"></kendo-label>
+            <kendo-dropdownlist
+            [data]="formateurList"
+            textField="name"
+            valueField="id"
+            formControlName="formateur"
+            #form
+   >
+          </kendo-dropdownlist>          
+        </kendo-formfield>
+        
+    </div>
+</div>         
+<div class="row">
+    <div class="col-10">
+        <kendo-formfield>
+            <kendo-label [for]="lien" text="Lien de la formation"></kendo-label>
+            <kendo-textbox formControlName="lien" [clearButton]="true" #lien></kendo-textbox>
+        </kendo-formfield>
+    </div>
+   
+</div>     
+
+
+        <div class="k-form-buttons mb-2">
+
+            <button kendoButton themeColor="primary" (click)="save()" [disabled]="formationForm.invalid">
+                Sauvegarder
+            </button>
+            <button kendoButton (click)="cancel()">Annuler</button>
+        </div>
+    </form>
+</div>
+

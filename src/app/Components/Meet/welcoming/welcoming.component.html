@@ -1,0 +1,20 @@
+<h1>Venez découvrir les nouveautés de notre centre de formation  à travers la Digitalisation de nos formations</h1>
+<div class="container">
+  
+    <p>Pour accéder à nos formations veuillez copier le lien à partir du calendrier</p>
+   
+    <form class="k-form" [formGroup]="meetForm">
+        <div class="col-6">
+        <kendo-formfield >
+            <input  placeholder="exemple:vpaas-magic-cookie-b34033c7d1024d40a46ed0d08c0a945f/ujs95" formControlName="url"  #url>
+            <kendo-formerror>Erreur: saisir un lien </kendo-formerror>
+            
+        </kendo-formfield>
+       
+        <button class="btn1" kendoButton type="button" (click)="rejoindre()" [disabled]="meetForm.invalid">rejoindre</button>
+        <button class="btn2" *ngIf="user?.role=='admin'" kendoButton (click)="generateMeetRoom()"  >Générer</button>
+        </div>
+        
+    </form>
+</div>
+<img src="meeting.png">

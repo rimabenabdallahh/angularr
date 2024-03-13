@@ -1,0 +1,16 @@
+<div class="wrapper">
+    <kendo-tabstrip (tabSelect)="onTabSelect($event)">
+      <kendo-tabstrip-tab title="Evaluation" [selected]="true">
+        <ng-template kendoTabContent>
+          <app-tab-eval></app-tab-eval>
+          
+        </ng-template>
+      </kendo-tabstrip-tab>
+      <kendo-tabstrip-tab  title="Resultat" *ngIf="user?.role=='admin'">
+        <ng-template  kendoTabContent>
+          <app-grid-eval></app-grid-eval>
+        </ng-template>
+      </kendo-tabstrip-tab>
+
+    </kendo-tabstrip>
+  </div>

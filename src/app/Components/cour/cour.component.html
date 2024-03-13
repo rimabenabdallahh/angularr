@@ -1,0 +1,45 @@
+<div  class="row  m-3">
+    <div  class="col-3 mt-3" *ngIf="user?.role=='formateur'">
+      <button kendoButton  [primary]="true" (click)="openCourDetails(null)"> + Ajouter</button>
+    </div>
+    <div  class="row  m-3">
+      <div  class="col-3 mt-3" *ngIf="user?.role!='formateur'">
+      <b>Supports des formations</b>
+      </div>    
+     
+  </div>
+  <!--kendo-grid [data]="gridData"  [filterable]="true"></kendo-grid-->
+<kendo-grid [data]="gridData" [resizable]="true">
+      <kendo-grid-column field="titre" title="Titre"> </kendo-grid-column>
+      <kendo-grid-column field="documentName" title="Nom de document"> </kendo-grid-column>
+      <kendo-grid-column field="documentType" title="Type de document"> </kendo-grid-column>
+      
+      <kendo-grid-column field="formation" title="Formation"> 
+        <ng-template kendoGridCellTemplate let-dataItem>
+          {{ dataItem.formation.name }}
+        </ng-template>
+      </kendo-grid-column>
+      <kendo-grid-column  field="creationDate"  title="Created Date"  >
+        <ng-template   kendoGridCellTemplate let-dataItem>
+            {{ dataItem.creationDate | date: 'dd/MM/yyyy' }}
+        </ng-template>
+    </kendo-grid-column>
+    <kendo-grid-column title="Action">
+      <ng-template kendoGridCellTemplate let-dataItem>
+        <span kendoTooltip title="Download file">
+          <button kendoButton (click)="saveByteArray(dataItem)" [fillMode]="fillMode">
+                 <span class="k-icon k-i-upload"></span></button>
+        </span>
+        <span  *ngIf="user?.role=='formateur'" kendoTooltip title="Edit" >         
+          <button kendoButton  (click)="openCourDetails(dataItem)" [fillMode]="fillMode">  <span
+                    class="k-icon k-i-edit" ></span></button>
+        </span>
+        <span *ngIf="user?.role=='formateur'" kendoTooltip title="Delete file">         
+          <button kendoButton (click)="delete(dataItem.id)"[fillMode]="fillMode" class="delete" >  <span
+                    class="k-icon k-i-delete"></span></button>
+        </span>
+      </ng-template>
+  </kendo-grid-column>
+   
+ 
+  

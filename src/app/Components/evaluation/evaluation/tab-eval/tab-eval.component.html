@@ -1,0 +1,536 @@
+<div *ngIf="!exist" class="container w-100 " [formGroup]="evalForm">
+    <div class="row mt-3" *ngIf="!readOnly">
+        <div class="col-12">
+            Merci de remplir ce document à l issue de la formation et de le remettre au CFP-STIR qui a assuré votre
+        formation. Vos commentaires donnent des statistiques qui nous aiderons à améliorer le dispositif de la formation,
+        <b>et vos données resteront confidentielles.</b>
+
+        </div>
+    </div>
+
+    <div class="row mt-3" *ngIf="!readOnly">
+        <div class="col-6">
+            <kendo-formfield >
+                <kendo-label  text="Prenom"></kendo-label>
+                <kendo-textbox formControlName="Prenom" [clearButton]="true"></kendo-textbox>
+               
+            </kendo-formfield>
+
+        </div>
+
+    </div>
+
+    <div class="row mt-3" *ngIf="!readOnly">
+        <div class="col-6">
+            <kendo-formfield>
+                <kendo-label text="Nom"></kendo-label>
+                <kendo-textbox formControlName="Nom" [clearButton]="true"></kendo-textbox>
+                
+            </kendo-formfield>
+
+        </div>      
+    </div>
+
+    <div class="row mt-3" *ngIf="!readOnly">
+        <div class="col-6">
+            <kendo-formfield>
+                <kendo-label  text="Poste"></kendo-label>
+                <kendo-textbox formControlName="poste" [clearButton]="true"></kendo-textbox>
+                
+            </kendo-formfield>
+
+        </div>
+    </div>
+
+    <div class="row mt-3" *ngIf="!readOnly">
+        <div class="col-6">
+            <kendo-formfield><kendo-label text="CIN"></kendo-label>
+                <kendo-textbox formControlName="CIN" [clearButton]="true"></kendo-textbox>
+            </kendo-formfield>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-12">
+            <kendo-formfield>
+                <kendo-label  text="Indiquez votre degré de satisfaction à l égard de chacun des énoncés présentés ci-dessous, en utilisant l’échelle
+                    indiquée :"></kendo-label>
+                    <p style="font-weight: bold;" class="mt-3">La formation</p>  
+                    <div class="row">                 
+                    <div class="col-5">
+                        Les objectifs de la formation étaient clairs et précis</div>
+                        <div class="col-7 d-flex justify-content-between">
+                            <fieldset class="fieldset" [disabled]="readOnly">
+                            <kendo-label  text="Insatisfaisant"></kendo-label>
+                            <input  type="radio"  name="objClair" value="insatisfaisant"    formControlName="objClair" kendoRadioButton/>
+                            <kendo-label  text="Peu satisfaisant"></kendo-label>
+                            <input  type="radio"   name="objClair"  value="Peusatisfaisant" formControlName="objClair"  kendoRadioButton/>
+                            <kendo-label  text="Satisfaisant"> </kendo-label>
+                            <input  type="radio"   name="objClair"  value="satisfaisant"   formControlName="objClair"  kendoRadioButton />
+                        </fieldset>
+        
+                        </div>
+                    </div>
+            </kendo-formfield>
+        </div>
+    </div>
+
+    <div class="row mt-3">
+        <div class="col-12">
+            <kendo-formfield>
+                <div class="row">
+                    <div class="col-5">
+                        Les objectifs de la formation ont été atteints
+                    </div>
+                    <div class="col-7 d-flex justify-content-between">
+                        <fieldset class="fieldset" [disabled]="readOnly">
+                        <kendo-label  text="Insatisfaisant">  </kendo-label>
+                        <input type="radio"  name="objAtteint" value="insatisfaisant"    formControlName="objAtteint"  kendoRadioButton/>
+                        <kendo-label  text="Peu satisfaisant"></kendo-label>
+                        <input type="radio"   name="objAtteint"  value="Peusatisfaisant"  formControlName="objAtteint" kendoRadioButton/>
+                        <kendo-label  text="Satisfaisant"> </kendo-label>
+                        <input type="radio"   name="objAtteint"  value="satisfaisant"  formControlName="objAtteint"  kendoRadioButton />
+                     </fieldset>
+    
+                    </div>
+                </div>
+            </kendo-formfield>
+
+        </div>
+    </div>
+
+    <div class="row mt-3 ">
+        <div class="col-12">
+            <kendo-formfield>
+                <div class="row">
+                    <div class="col-5">
+                        Le contenu est adapté à mes besoins
+                    </div>
+                    <div class="col-7 d-flex justify-content-between">
+                        <fieldset class="fieldset" [disabled]="readOnly">
+                        <kendo-label  text="Insatisfaisant"></kendo-label>
+                        <input type="radio" name="ContenuAd" value="insatisfaisant"    formControlName="ContenuAd"  kendoRadioButton/>
+                        <kendo-label  text="Peu satisfaisant"></kendo-label>
+                        <input type="radio"   name="ContenuAd"  value="Peusatisfaisant"  formControlName="ContenuAd" kendoRadioButton/>
+                        <kendo-label  text="Satisfaisant"></kendo-label>
+                        <input type="radio"   name="ContenuAd"  value="satisfaisant"   formControlName="ContenuAd"  kendoRadioButton />
+                    </fieldset>
+                    </div>
+                </div>
+            </kendo-formfield>
+
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12">
+            <kendo-formfield>
+                <div class="row">
+                    <div class="col-5">
+                        Je peux appliquer directement le contenu à mon travail
+                    </div>
+                    <div class="col-7 d-flex justify-content-between">
+                        <fieldset class="fieldset" [disabled]="readOnly">
+                        <kendo-label  text="Insatisfaisant"></kendo-label>
+                        <input  type="radio"  name="AppContenu" value="insatisfaisant"    formControlName="AppContenu"  kendoRadioButton/>
+                        <kendo-label  text="Peu satisfaisant"></kendo-label>
+                        <input type="radio"   name="AppContenu"  value="Peusatisfaisant"  formControlName="AppContenu" kendoRadioButton/>
+                        <kendo-label  text="Satisfaisant"></kendo-label>
+                        <input type="radio"   name="AppContenu"  value="satisfaisant"   formControlName="AppContenu"  kendoRadioButton />
+                    </fieldset>
+                    </div>
+                </div>
+            </kendo-formfield>
+        </div>
+    </div>
+     <div class="row mt-3">
+        <div class="col-12">
+            <kendo-formfield>
+                <div class="row">
+                    <div class="col-5">
+                        La durée de la session est appropriée au contenu présenté
+                    </div>
+                    <div class="col-7 d-flex justify-content-between">
+                        <fieldset class="fieldset" [disabled]="readOnly">
+                        <kendo-label  text="Insatisfaisant"></kendo-label>
+                        <input type="radio"  name="DureeSession" value="insatisfaisant"    formControlName="DureeSession"  kendoRadioButton/>
+                        <kendo-label  text="Peu satisfaisant"></kendo-label>
+                        <input type="radio"  name="DureeSession"  value="Peusatisfaisant"  formControlName="DureeSession" kendoRadioButton/>
+                        <kendo-label  text="Satisfaisant"></kendo-label>
+                        <input type="radio"  name="DureeSession"  value="satisfaisant"   formControlName="DureeSession"  kendoRadioButton />
+                    </fieldset>
+                    </div>
+                </div>
+            </kendo-formfield>
+        </div>
+    </div> 
+    <div class="row mt-3">
+        <div class="col-12">
+            <kendo-formfield>
+                <div class="row">
+                    <div class="col-5">
+                        L’horaire prévu a été respecté
+                    </div>
+                    <div class="col-7 d-flex justify-content-between">
+                        <fieldset class="fieldset" [disabled]="readOnly">
+                        <kendo-label  text="Insatisfaisant"></kendo-label>
+                        <input type="radio"  name="HorairePrevu" value="insatisfaisant"    formControlName="HorairePrevu"  kendoRadioButton/>
+                        <kendo-label  text="Peu satisfaisant"></kendo-label>
+                        <input type="radio"   name="HorairePrevu"  value="Peusatisfaisant"  formControlName="HorairePrevu" kendoRadioButton/>
+                        <kendo-label  text="Satisfaisant"></kendo-label>
+                        <input type="radio"   name="HorairePrevu"  value="satisfaisant"   formControlName="HorairePrevu"  kendoRadioButton />
+                    </fieldset>
+                    </div>
+                </div>
+            </kendo-formfield>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12">
+            <kendo-formfield>
+                <div class="row">
+                    <div class="col-5">
+                        La motivation à suivre ce cours
+                    </div>
+                    <div class="col-7 d-flex justify-content-between">
+                        <fieldset class="fieldset" [disabled]="readOnly">
+                        <kendo-label  text="Insatisfaisant"></kendo-label>
+                        <input type="radio"  name="Motiviation" value="insatisfaisant"   formControlName="Motiviation"  kendoRadioButton/>
+                        <kendo-label  text="Peu satisfaisant"></kendo-label>
+                        <input type="radio"   name="Motiviation"  value="Peusatisfaisant"  formControlName="Motiviation" kendoRadioButton/>
+                        <kendo-label  text="Satisfaisant"></kendo-label>
+                        <input type="radio"   name="Motiviation"  value="satisfaisant"   formControlName="Motiviation"  kendoRadioButton />
+                    </fieldset>
+                    </div>
+                </div>
+            </kendo-formfield>
+        </div>
+    </div>
+      <div class="row mt-3">
+        <div class="col-12">
+            <kendo-formfield>
+                <div class="row">
+                    <div class="col-5">
+                        Le thème de la formation
+                    </div>
+                    <div class="col-7 d-flex justify-content-between">
+                        <fieldset class="fieldset" [disabled]="readOnly">
+                        <kendo-label  text="Insatisfaisant"></kendo-label>
+                        <input type="radio" name="THemeFor" value="insatisfaisant"    formControlName="THemeFor"  kendoRadioButton/>
+                        <kendo-label  text="Peu satisfaisant"></kendo-label>
+                        <input type="radio"  name="THemeFor"  value="Peusatisfaisant"  formControlName="THemeFor" kendoRadioButton/>
+                        <kendo-label  text="Satisfaisant"></kendo-label>
+                        <input type="radio"  name="THemeFor"  value="satisfaisant"   formControlName="THemeFor"  kendoRadioButton />
+                    </fieldset>
+                    </div>
+                </div>
+            </kendo-formfield>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12">
+            <kendo-formfield>
+                <div class="row">
+                    <div class="col-5">
+                        L’homogénéité du groupe de la formation
+                    </div>
+                    <div class="col-7 d-flex justify-content-between">
+                        <fieldset class="fieldset" [disabled]="readOnly">
+                        <kendo-label  text="Insatisfaisant"></kendo-label>
+                        <input type="radio"  name="Homogeneite" value="insatisfaisant"    formControlName="Homogeneite"  kendoRadioButton/>
+                        <kendo-label  text="Peu satisfaisant"></kendo-label>
+                        <input type="radio"   name="Homogeneite"  value="Peusatisfaisant"  formControlName="Homogeneite" kendoRadioButton/>
+                        <kendo-label  text="Satisfaisant"></kendo-label>
+                        <input type="radio"  name="Homogeneite"  value="satisfaisant"   formControlName="Homogeneite"  kendoRadioButton />
+                    </fieldset>
+                    </div>
+                </div>
+            </kendo-formfield>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12">
+            
+            <kendo-formfield>
+                <div class="row">
+                    <div class="col-5">
+                        Le niveau du participant par rapport à celui du groupe
+                    </div>
+                    <div class="col-7 d-flex justify-content-between">
+                        <fieldset class="fieldset" [disabled]="readOnly">
+                        <kendo-label  text="Insatisfaisant"></kendo-label>
+                        <input type="radio"  name="Niveau" value="insatisfaisant"    formControlName="Niveau"  kendoRadioButton/>
+                        <kendo-label  text="Peu satisfaisant"></kendo-label>
+                        <input type="radio"   name="Niveau"  value="Peusatisfaisant"  formControlName="Niveau" kendoRadioButton/>
+                        <kendo-label  text="Satisfaisant"></kendo-label>
+                        <input type="radio"   name="Niveau"  value="satisfaisant"   formControlName="Niveau"  kendoRadioButton />
+                    </fieldset>
+                    </div>
+                </div>
+            </kendo-formfield>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12">
+            <kendo-formfield>
+                <p style="font-weight: bold;">Le formateur</p>
+                <div class="row">
+                    <div class="col-5">
+                        J’ai trouvé l’animation du groupe par le formateur
+                    </div>
+                    <div class="col-7 d-flex justify-content-between">
+                        <fieldset class="fieldset" [disabled]="readOnly">
+                        <kendo-label  text="Insatisfaisant"></kendo-label>
+                        <input type="radio"  name="AnimationGroupe" value="insatisfaisant"    formControlName="AnimationGroupe"  kendoRadioButton/>
+                        <kendo-label  text="Peu satisfaisant"></kendo-label>
+                        <input type="radio"   name="AnimationGroupe"  value="Peusatisfaisant"  formControlName="AnimationGroupe" kendoRadioButton/>
+                        <kendo-label  text="Satisfaisant"></kendo-label>
+                        <input type="radio"   name="AnimationGroupe"  value="satisfaisant"   formControlName="AnimationGroupe"  kendoRadioButton />
+                    </fieldset>
+                    </div>
+                </div>
+            </kendo-formfield>
+
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12">
+            <kendo-formfield>
+                <div class="row">
+                    <div class="col-5">
+                        De la disponibilité du formateur durant la formation
+                    </div>
+                    <div class="col-7 d-flex justify-content-between">
+                        <fieldset class="fieldset" [disabled]="readOnly">
+                        <kendo-label  text="Insatisfaisant"></kendo-label>
+                        <input type="radio"  name="EntenduF" value="insatisfaisant"    formControlName="EntenduF"  kendoRadioButton/>
+                        <kendo-label  text="Peu satisfaisant"></kendo-label>
+                        <input type="radio"   name="EntenduF"  value="Peusatisfaisant"  formControlName="EntenduF" kendoRadioButton/>
+                        <kendo-label  text="Satisfaisant"></kendo-label>
+                        <input type="radio"   name="EntenduF"  value="satisfaisant"   formControlName="EntenduF"  kendoRadioButton />
+                    </fieldset>
+                    </div>
+                </div>
+            </kendo-formfield> 
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12">
+            <kendo-formfield>
+                <div class="row">
+                    <div class="col-5">
+                        Du support pédagogique
+                    </div>
+                    <div class="col-7 d-flex justify-content-between">
+                        <fieldset class="fieldset" [disabled]="readOnly">
+                        <kendo-label  text="Insatisfaisant"></kendo-label>
+                        <input type="radio"  name="SupportPe" value="insatisfaisant"   formControlName="SupportPe"  kendoRadioButton/>
+                        <kendo-label  text="Peu satisfaisant"></kendo-label>
+                        <input type="radio"   name="SupportPe"  value="Peusatisfaisant"  formControlName="SupportPe" kendoRadioButton/>
+                        <kendo-label  text="Satisfaisant"></kendo-label>
+                        <input type="radio"   name="SupportPe"  value="satisfaisant"   formControlName="SupportPe"  kendoRadioButton />
+                    </fieldset>
+                    </div>
+                </div>
+            </kendo-formfield>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12">
+            <kendo-formfield>
+                <div class="row">
+                    <div class="col-5">
+                        De la présentation informatique (PPT, Word, Excel…)
+                    </div>
+                    <div class="col-7 d-flex justify-content-between">
+                        <fieldset class="fieldset" [disabled]="readOnly">
+                        <kendo-label  text="Insatisfaisant"></kendo-label>
+                        <input type="radio"  name="PresentationInf" value="insatisfaisant"    formControlName="PresentationInf"  kendoRadioButton/>
+                        <kendo-label  text="Peu satisfaisant"></kendo-label>
+                        <input type="radio"  name="PresentationInf"  value="Peusatisfaisant"  formControlName="PresentationInf" kendoRadioButton/>
+                        <kendo-label  text="Satisfaisant"></kendo-label>
+                        <input type="radio"   name="PresentationInf"  value="satisfaisant"   formControlName="PresentationInf"  kendoRadioButton />
+                    </fieldset>
+                    </div>
+                </div>
+            </kendo-formfield>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12">
+              
+            <kendo-formfield>
+                <div class="row">
+                    <div class="col-5">
+                        A mon avis personnel le formateur présente une maitrise
+                        linguistique
+                    </div>
+                    <div class="col-7 d-flex justify-content-between">
+                        <fieldset class="fieldset" [disabled]="readOnly">
+                        <kendo-label  text="Insatisfaisant"></kendo-label>
+                        <input type="radio"  name="MaitriseLing" value="insatisfaisant"    formControlName="MaitriseLing"  kendoRadioButton/>
+                        <kendo-label  text="Peu satisfaisant"></kendo-label>
+                        <input type="radio"   name="MaitriseLing"  value="Peusatisfaisant"  formControlName="MaitriseLing" kendoRadioButton/>
+                        <kendo-label  text="Satisfaisant"></kendo-label>
+                        <input type="radio"  name="MaitriseLing"  value="satisfaisant"   formControlName="MaitriseLing"  kendoRadioButton />
+                    </fieldset>
+                    </div>
+                </div>
+            </kendo-formfield>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12">
+            <kendo-formfield>
+                <div class="row">
+                    <div class="col-5">
+                        Le formateur répond correctement à toute question
+                    </div>
+                    <div class="col-7 d-flex justify-content-between">
+                        <fieldset class="fieldset" [disabled]="readOnly">
+                        <kendo-label  text="Insatisfaisant"></kendo-label>
+                        <input type="radio"  name="FormateurQues" value="insatisfaisant"    formControlName="FormateurQues"  kendoRadioButton/>
+                        <kendo-label  text="Peu satisfaisant"></kendo-label>
+                        <input type="radio"  name="FormateurQues"  value="Peusatisfaisant"  formControlName="FormateurQues" kendoRadioButton/>
+                        <kendo-label  text="Satisfaisant"></kendo-label>
+                        <input type="radio"   name="FormateurQues"  value="satisfaisant"   formControlName="FormateurQues"  kendoRadioButton />
+                    </fieldset>
+                    </div>
+                </div>
+            </kendo-formfield>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-12">
+             
+            <kendo-formfield>
+                <div class="row">
+                    <div class="col-5">
+                        Le formateur présente souvent des cas pratiques
+                    </div>
+                    <div class="col-7 d-flex justify-content-between">
+                        <fieldset class="fieldset" [disabled]="readOnly">
+                        <kendo-label  text="Insatisfaisant"></kendo-label>
+                        <input type="radio"  name="FormateurPresent" value="insatisfaisant"   formControlName="FormateurPresent"  kendoRadioButton/>
+                        <kendo-label  text="Peu satisfaisant"></kendo-label>
+                        <input type="radio"   name="FormateurPresent"  value="Peusatisfaisant"  formControlName="FormateurPresent" kendoRadioButton/>
+                        <kendo-label  text="Satisfaisant"></kendo-label>
+                        <input type="radio"   name="FormateurPresent"  value="satisfaisant"   formControlName="FormateurPresent"  kendoRadioButton />
+                    </fieldset>
+                    </div>
+                </div>
+            </kendo-formfield>
+        </div>
+    </div>
+   
+    <div class="row mt-3">
+        <div class="col-12">
+            <kendo-formfield>
+                <div class="row">
+                    <div class="col-5">
+                      Le formateur utilise le gestuel 
+                    </div>
+                    <div class="col-7 d-flex justify-content-between">
+                        <fieldset class="fieldset" [disabled]="readOnly">
+                        <kendo-label  text="Insatisfaisant">  </kendo-label>
+                        <input type="radio"  name="FormateurGestuel" value="insatisfaisant"    formControlName="FormateurGestuel"  kendoRadioButton/>
+                        <kendo-label  text="Peu satisfaisant"></kendo-label>
+                        <input type="radio"   name="FormateurGestuel"  value="Peusatisfaisant"  formControlName="FormateurGestuel" kendoRadioButton/>
+                        <kendo-label  text="Satisfaisant"> </kendo-label>
+                        <input type="radio"   name="FormateurGestuel"  value="satisfaisant"  formControlName="FormateurGestuel"  kendoRadioButton />
+                   
+                    </fieldset>
+                    </div>
+                </div>
+            </kendo-formfield>
+
+        </div>
+    </div>
+   
+    <div class="row mt-3">
+        <div class="col-12">
+            <kendo-formfield>
+                <div class="row">
+                    <div class="col-5">
+                        Le formateur est présent tôt le matin
+                    </div>
+                    <div class="col-7 d-flex justify-content-between">
+                        <fieldset class="fieldset" [disabled]="readOnly">
+                        <kendo-label  text="Insatisfaisant"></kendo-label>
+                        <input type="radio"  name="FormateurPsent" value="insatisfaisant"    formControlName="FormateurPsent"  kendoRadioButton/>
+                        <kendo-label  text="Peu satisfaisant"></kendo-label>
+                        <input type="radio"   name="FormateurPsent"  value="Peusatisfaisant"  formControlName="FormateurPsent" kendoRadioButton/>
+                        <kendo-label  text="Satisfaisant"></kendo-label>
+                        <input type="radio"   name="FormateurPsent"  value="satisfaisant"   formControlName="FormateurPsent"  kendoRadioButton />
+                    </fieldset>
+                    </div>
+                </div>
+            </kendo-formfield>
+        </div>
+    </div>
+  
+    <div class="row mt-3">
+        <div class="col-12">
+            <kendo-formfield>
+                <div class="row">
+                    <div class="col-5">
+                    Le formateur impose le sérieux et la rigueur durant la
+                        formation
+                    </div>
+                    <div class="col-7 d-flex justify-content-between">
+                        <fieldset class="fieldset" [disabled]="readOnly">
+                        <kendo-label  text="Insatisfaisant">  </kendo-label>
+                        <input type="radio"  name="FormateurSerieux" value="insatisfaisant"    formControlName="FormateurSerieux"  kendoRadioButton/>
+                        <kendo-label  text="Peu satisfaisant"></kendo-label>
+                        <input type="radio"   name="FormateurSerieux"  value="Peusatisfaisant"  formControlName="FormateurSerieux" kendoRadioButton/>
+                        <kendo-label  text="Satisfaisant"> </kendo-label>
+                        <input type="radio"   name="FormateurSerieux"  value="satisfaisant"  formControlName="FormateurSerieux"  kendoRadioButton />
+                    </fieldset>
+    
+                    </div>
+                </div>
+            </kendo-formfield>
+
+        </div>
+    </div>
+   
+    <div class="row mt-3">
+        <div class="col-12">
+            <kendo-formfield>
+                    <p style="font-weight: bold;" class="mt-3">Votre expérince</p>  
+                    <div class="row">                 
+                    <div class="col-5">
+                          Pouvez vous classer votre expérience avec l'application?
+                           </div>
+                        <div class="col-7 d-flex justify-content-between">
+                            <fieldset class="fieldset" [disabled]="readOnly">
+                            <kendo-label  text="Mauvais"></kendo-label>
+                            <input type="radio"  name="Etoile" value="Mauvais"   formControlName="Etoile"  kendoRadioButton/>
+                   
+                            <kendo-label  text="Médiocre"></kendo-label>
+                            <input type="radio"   name="Etoile"  value="Médiocre"  formControlName="Etoile" kendoRadioButton/>
+                            <kendo-label  text="Excellent"> </kendo-label>
+                            <input type="radio"  name="Etoile"  value="Excellent" formControlName="Etoile"  kendoRadioButton />
+                      
+                        </fieldset>
+                        </div>
+                    </div>
+            </kendo-formfield>
+        </div>
+    </div>
+
+    
+    
+              <button *ngIf="!readOnly" kendoButton themeColor="primary"  (click)="saveData()"> 
+          Sauvegarder
+
+            </button>
+</div> 
+
+<div class="row" *ngIf="exist">
+ <h2> Vous avez déjà rempli le formulaire ! </h2>
+</div>
+
+
+  
+                
+            

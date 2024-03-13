@@ -1,0 +1,49 @@
+
+<kendo-scheduler
+[kendoSchedulerBinding]="Events"
+[selectedDate]="selectedDate"
+timezone="Africa/Tunis"
+[selectedViewIndex]="0"
+style="height: 650px; color:rgb(58, 59, 59);"
+
+>
+<kendo-scheduler-messages today="Aujourd'hui" monthViewTitle="Mois" weekViewTitle="Semaine" calendarToday="Aujourd'hui" allDay="Jour" showWorkDay="Heurs de formations" showFullDay="Toute la jourée" ></kendo-scheduler-messages>
+<ng-template
+      kendoSchedulerEventTemplate
+      let-event="event" >
+      <div class="row" (click)="open(event)">
+        <b>{{ event.title }}</b>
+      </div>
+      
+    </ng-template>
+<kendo-scheduler-month-view [eventHeight]="50" >
+</kendo-scheduler-month-view>   
+<kendo-scheduler-week-view> </kendo-scheduler-week-view>
+<kendo-scheduler-agenda-view > </kendo-scheduler-agenda-view>
+
+</kendo-scheduler>
+
+<kendo-dialog title="Détail de la formation"  *ngIf="opened" (close)="close()" [minWidth]="250"
+  [themeColor]="'dark'" style="background-color:rgba(0,0,0,0.2)" [width]="500">
+<div class="row w-100">
+  <div class="col-3">
+    <P> Code : </P> 
+  </div>
+  <div class="col-6">
+    <b> {{ selectedEvent?.title}} </b> 
+  </div>
+</div>
+<div class="row mt-2">
+  <div class="col-3">
+    <P> Link : </P> 
+  </div>
+  <div class="col-6">
+    <b> {{ selectedEvent?.description}} </b> 
+  </div>
+</div>
+        
+     
+    
+</kendo-dialog>
+
+
